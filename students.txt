@@ -1,0 +1,5 @@
+Student|FCIM|John|Smith|js@mail.com|12.04.2000|20.04.2023|False
+Student|FCIM|Michael|Owen|mo@mail.com|14.02.2001|12.05.2023|True
+Student|FCIM|David|Maguire|dm@mail.com|31.08.2002|19.09.2023|True
+Student|FCM|Harry|Shaw|hs@mail.com|19.01.2001|24.11.2023|False
+Student|FCM|Luke|Beckham|lb@mail.com|10.12.2001|08.01.2023|True

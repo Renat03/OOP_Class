@@ -12,14 +12,25 @@ class Faculty:
         self.graduated_students = []
 
     def add_student(self, student):
-        self.enrolled_students.append(student)
-
-    def graduate_student(self, student):
-        if student in self.enrolled_students:
-            self.enrolled_students.remove(student)
+        if student.graduated:
             self.graduated_students.append(student)
         else:
+            self.enrolled_students.append(student)
+
+    def validate_student_graduation(self, student):
+        if student in self.graduated_students:
+            print(f"{student.first_name} {student.last_name} has already graduated from {self.abbreviation}.")
+            return False
+        elif student in self.enrolled_students:
+            self.enrolled_students.remove(student)
+            self.graduated_students.append(student)
+            student.graduated = True
+            print(f"Student {student.first_name} {student.last_name} has graduated from {self.abbreviation}.")
+            return True
+        else:
             print(f"{student.first_name} {student.last_name} is not enrolled in {self.name}.")
+            return False
+
 
     def get_enrolled_students(self):
         return self.enrolled_students

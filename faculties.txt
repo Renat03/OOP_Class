@@ -1,0 +1,4 @@
+Faculty|Facultatea de Calculatoare, Informatica si Microelectronica|FCIM|SOFTWARE_ENGINEERING
+Faculty|Facultatea Constructoare de Masini|FCM|MECHANICAL_ENGINEERING
+Faculty|Facultatea de Arhitectura|FA|URBANISM_ARCHITECTURE
+Faculty|Facultatea de Inginerie Mecanica|FIM|MECHANICAL_ENGINEERING
