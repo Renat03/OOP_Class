@@ -1,11 +1,12 @@
-# file_manager.py
 from models.university import University
 from models.faculty import Faculty
 from models.student import Student
 
 class FileManager:
-    FACULTY_FILE = "faculties.txt"
-    STUDENT_FILE = "students.txt"
+    FACULTY_FILE = "text_files/faculties.txt"
+    STUDENT_FILE = "text_files/students.txt"
+
+
 
     def save(university):
         with open(FileManager.FACULTY_FILE, 'w') as faculty_file:

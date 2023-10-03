@@ -29,7 +29,7 @@ class ApplicationLoop:
         
     def print_faculty_menu(self):
         print('''Faculty Operations:
-    ns/<faculty abbreviation>/<first name>/<last name>/<email>/<dob>/<enrollment date> - Create student
+    ns/<faculty abbreviation>/<first name>/<last name>/<email>/<dob>/<enrollment date>/<has_graduated> - Create student
     gs/<email> - Graduate student
     ds/<faculty abbreviation> - Display enrolled students
     dg/<faculty abbreviation> - Display graduated students
