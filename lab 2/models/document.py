@@ -1,12 +1,12 @@
 import os
-import datetime
+from datetime import datetime
 
 class Document:
     def __init__(self, filename):
         self.filename = filename
         self.extension = os.path.splitext(filename)[1]
-        self.created_at = datetime.datetime.now()
-        self.updated_at = None
+        self.created_at = datetime.fromtimestamp(os.path.getctime(filename))
+        self.updated_at = datetime.fromtimestamp(os.path.getmtime(filename))
         self.snapshot_time = None
 
     def info(self):
@@ -18,13 +18,11 @@ Updated time: {self.updated_at}
 ''')
 
     def has_changed(self):
-        last_modified_time = datetime.datetime.fromtimestamp(os.path.getmtime(self.filename))
-        
-        if not self.snapshot_time or last_modified_time > self.snapshot_time:
-            self.updated_at = last_modified_time
+        if not self.snapshot_time:
+            return False
+        elif self.updated_at > self.snapshot_time:
             return True
         return False
 
-
     def commit(self):
-        self.snapshot_time = datetime.datetime.now()
+        self.snapshot_time = datetime.now()
