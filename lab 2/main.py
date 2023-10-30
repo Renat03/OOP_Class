@@ -10,7 +10,7 @@ class FolderMonitor:
         self.folder_path = folder_path
         self.documents = self.load_documents()
         self.committed_documents = self.documents.copy()
-        self.last_snapshot_time = None
+        self.last_snapshot_time = datetime.datetime.now()
 
     def load_documents(self):
         docs = []
@@ -61,8 +61,7 @@ class FolderMonitor:
             name = doc.filename.split('\\')[-1]
             if name not in added_files:
                 current_updated_at = datetime.datetime.fromtimestamp(os.path.getmtime(doc.filename))
-                status = 'Changed' if current_updated_at > doc.updated_at else 'No Change'
-                doc.updated_at = current_updated_at
+                status = 'Changed' if current_updated_at > self.last_snapshot_time else 'No Change'
                 print(f"{name} - {status}")
         print('')
 
