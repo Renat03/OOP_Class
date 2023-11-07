@@ -33,7 +33,6 @@ class FolderMonitor:
     def status(self):
         current_files = set(os.listdir(self.folder_path))
         last_snapshot_files = {doc.filename.split('\\')[-1] for doc in self.committed_documents}
-
         added_files = set(current_files - last_snapshot_files)
         removed_files = set(last_snapshot_files - current_files)
 
@@ -43,6 +42,8 @@ class FolderMonitor:
                 ext = os.path.splitext(filename)[1]
                 if ext in ['.txt']:
                     self.documents.append(TextDocument(file_path))
+                    for docs in self.documents:
+                        print(docs.filename)
                 elif ext in ['.png', '.jpg', '.jpeg']:
                     self.documents.append(ImageDocument(file_path))
                 elif ext in ['.py', '.java']:
@@ -90,4 +91,3 @@ class FolderMonitor:
 if __name__ == '__main__':
     monitor = FolderMonitor(r"C:\Users\PС\Desktop\oop\lab 2\files")
     monitor.start()
-

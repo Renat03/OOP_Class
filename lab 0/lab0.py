@@ -1,6 +1,6 @@
 class CreditCard:
     def __init__(self, card_number, balance):
-        self.__account_number = card_number
+        self.__card_number = card_number
         self.__balance = balance
 
     def deposit(self, amount):

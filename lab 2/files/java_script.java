@@ -21,6 +21,14 @@ public class CreditCard {
         return this.balance;
     }
 
+    public void add(){
+
+    }
+
+    public void subtract(){
+        
+    }
+
     public static void main(String[] args) {
         CreditCard account = new CreditCard("4329 4032 1292 2504", 1000);
         account.deposit(500);
