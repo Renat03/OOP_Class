@@ -1,10 +1,10 @@
-from implementations.list_stack import ListStack
+from implementations.dict_stack import DictStack
 
-ls = ListStack()
-print(ls.is_full())
-ls.push(1)
-ls.push({"number": 5})
-ls.push('3')
-print(ls.peek())
-ls.pop()
-print(ls.peek())
+ds = DictStack()
+print(ds.is_full())
+ds.push(1)
+ds.push({"number": 5})
+ds.push('3')
+print(ds.peek())
+ds.pop()
+print(ds.peek())
