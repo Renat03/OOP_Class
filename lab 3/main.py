@@ -9,13 +9,13 @@
 # ds.pop()
 # print(ds.peek())
 
-from implementations.linked_queue import LinkedQueue
+from implementations.circular_queue import CircularQueue
 
-lq = LinkedQueue()
-print(lq.is_full())
-lq.enqueue("First in the queue")
-lq.enqueue([1, 2, 3])
-lq.enqueue(False)
-print(lq.peek())
-lq.dequeue()
-print(lq.peek())
+cq = CircularQueue()
+print(cq.is_full())
+cq.enqueue("First in the queue")
+cq.enqueue([1, 2, 3])
+cq.enqueue(False)
+print(cq.peek())
+cq.dequeue()
+print(cq.peek())
