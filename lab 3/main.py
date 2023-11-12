@@ -9,9 +9,9 @@
 # ds.pop()
 # print(ds.peek())
 
-from implementations.list_queue import ListQueue
+from implementations.linked_queue import LinkedQueue
 
-lq = ListQueue()
+lq = LinkedQueue()
 print(lq.is_full())
 lq.enqueue("First in the queue")
 lq.enqueue([1, 2, 3])
